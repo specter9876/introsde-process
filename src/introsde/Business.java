@@ -91,21 +91,6 @@ public interface Business {
     /**
      * 
      * @param idUser
-     * @return
-     *     returns java.util.List<introsde.HealthMeasure>
-     */
-    @WebMethod
-    @WebResult(name = "healthMeasure", targetNamespace = "")
-    @RequestWrapper(localName = "getHistoryOfAllHealthMeasureByUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUser")
-    @ResponseWrapper(localName = "getHistoryOfAllHealthMeasureByUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUserResponse")
-    @Action(input = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserRequest", output = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserResponse")
-    public List<HealthMeasure> getHistoryOfAllHealthMeasureByUser(
-        @WebParam(name = "idUser", targetNamespace = "")
-        Long idUser);
-
-    /**
-     * 
-     * @param idUser
      * @param healthMeasureIn
      * @return
      *     returns introsde.HealthMeasure
@@ -120,6 +105,21 @@ public interface Business {
         Long idUser,
         @WebParam(name = "healthMeasureIn", targetNamespace = "")
         HealthMeasure healthMeasureIn);
+
+    /**
+     * 
+     * @param idUser
+     * @return
+     *     returns java.util.List<introsde.HealthMeasure>
+     */
+    @WebMethod
+    @WebResult(name = "healthMeasure", targetNamespace = "")
+    @RequestWrapper(localName = "getHistoryOfAllHealthMeasureByUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUser")
+    @ResponseWrapper(localName = "getHistoryOfAllHealthMeasureByUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUserResponse")
+    @Action(input = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserRequest", output = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserResponse")
+    public List<HealthMeasure> getHistoryOfAllHealthMeasureByUser(
+        @WebParam(name = "idUser", targetNamespace = "")
+        Long idUser);
 
     /**
      * 

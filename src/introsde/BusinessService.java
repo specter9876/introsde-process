@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BusinessService", targetNamespace = "http://soap.sde.isde/", wsdlLocation = "http://192.168.1.102:6995/ws/business?wsdl")
+@WebServiceClient(name = "BusinessService", targetNamespace = "http://soap.sde.isde/", wsdlLocation = "http://immense-garden-1687.herokuapp.com/ws/business?wsdl")
 public class BusinessService
     extends Service
 {
@@ -30,7 +30,7 @@ public class BusinessService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.1.102:6995/ws/business?wsdl");
+            url = new URL("http://immense-garden-1687.herokuapp.com/ws/business?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
