@@ -93,14 +93,14 @@ public interface Business {
      * @param idUser
      * @param healthMeasureIn
      * @return
-     *     returns introsde.HealthMeasure
+     *     returns java.lang.String
      */
     @WebMethod
-    @WebResult(name = "healthMeasure", targetNamespace = "")
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "addHealthMeasure", targetNamespace = "http://soap.sde.isde/", className = "introsde.AddHealthMeasure")
     @ResponseWrapper(localName = "addHealthMeasureResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.AddHealthMeasureResponse")
     @Action(input = "http://soap.sde.isde/Business/addHealthMeasureRequest", output = "http://soap.sde.isde/Business/addHealthMeasureResponse")
-    public HealthMeasure addHealthMeasure(
+    public String addHealthMeasure(
         @WebParam(name = "idUser", targetNamespace = "")
         Long idUser,
         @WebParam(name = "healthMeasureIn", targetNamespace = "")
