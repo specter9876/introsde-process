@@ -129,7 +129,7 @@ public class ProcessImpl implements Process {
     
 
     @Override
-    public HealthMeasure addHealthMeasure( Long idUser, HealthMeasure healthMeasure ){//OK\\ occhio timestamp di health measure e posso rimuovere il iduser qua
+    public String addHealthMeasure( Long idUser, HealthMeasure healthMeasure ){//OK\\ occhio timestamp di health measure e posso rimuovere il iduser qua
         //magari per distance la metto incrementale?
         Business business=getBusiness();
         return business.addHealthMeasure(idUser,healthMeasure);
