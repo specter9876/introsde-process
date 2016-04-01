@@ -104,11 +104,8 @@ public interface Process {
     @WebMethod(operationName="followGoal")
     @WebResult(name="goal")
     public Goal followGoal(@WebParam(name = "idUser") long idUser, @WebParam(name = "goalIn") Goal goal);
-    
-    
-
-    
-    @WebMethod(operationName = "controlGoalHealth")
+   
+    /* @WebMethod(operationName = "controlGoalHealth")
     @WebResult(name = "goals")
     public List<Goal> controlGoalHealth(@WebParam(name = "healthMeasure") HealthMeasure healthMeasure, @WebParam(name = "idUser") long idUser );
     
@@ -117,6 +114,8 @@ public interface Process {
     @WebResult(name = "goals")
     public List<Goal> controlGoalActivity(@WebParam(name = "activity") Activity activity, @WebParam(name = "idUser") long idUser );
     
+*/
+
     
     ///////////////////////////////////ACTIVITY//////////////////////////////////////////
     
@@ -130,8 +129,7 @@ public interface Process {
 
     
     @WebMethod(operationName = "addMyActivity")
-    @WebResult(name = "activity")
-    public Activity addMyActivity(@WebParam(name = "activityIn") Activity activity, @WebParam(name = "idUser") long idUser );
+    public String addMyActivity(@WebParam(name = "activityIn") Activity activity, @WebParam(name = "idUser") long idUser );
     
     @WebMethod(operationName = "getRelatedActivityToHealthType")
     @WebResult(name = "activity")

@@ -131,8 +131,24 @@ public class ProcessImpl implements Process {
     @Override
     public String addHealthMeasure( Long idUser, HealthMeasure healthMeasure ){//OK\\ occhio timestamp di health measure e posso rimuovere il iduser qua
         //magari per distance la metto incrementale?
+        String result=null;
+        String temp=null;
+        
         Business business=getBusiness();
-        return business.addHealthMeasure(idUser,healthMeasure);
+        temp=business.addHealthMeasure(idUser,healthMeasure);
+        List<Goal> goalList=business.controlGoalHealth(healthMeasure, idUser);
+        
+        if(goalList.size()>=0){
+            
+            result="well done you get your goal: "+ goalList.get(0).getDescription() + ", and for this measure: "+ temp;
+        }
+        else{
+            
+            result=temp;
+        }
+
+        
+        return result;
     }
     
     /////////////////////////////////////FOOD//////////////////////////////////////////
@@ -156,7 +172,7 @@ public class ProcessImpl implements Process {
     }
     ///////////////////////////////////GOAL//////////////////////////////////////////
 
-
+/*
     
     @Override
     public List<Goal> controlGoalHealth( HealthMeasure healthMeasure, long idUser ){
@@ -173,7 +189,7 @@ public class ProcessImpl implements Process {
         Business business=getBusiness();
         return business.controlGoalActivity(activity,idUser);
     }
-    
+    */
     
 
     
@@ -233,11 +249,24 @@ public class ProcessImpl implements Process {
     
     
     @Override
-    public Activity addMyActivity( Activity activity, long idUser ){
+    public String addMyActivity( Activity activity, long idUser ){
        
-        
+        String result=null;
         Business business=getBusiness();
-        return business.addMyActivity(activity,idUser);
+        
+        Activity activityRetrieved=business.addMyActivity(activity,idUser);
+        List <Goal> goalList=business.controlGoalActivity(activity,idUser);
+        
+       
+        if(goalList.size()>=0){
+            
+            result="well done you get your goal: "+ goalList.get(0).getDescription() + ", and for this activity you consume: "+activityRetrieved.getCalories()+"kcal";
+        }
+        else{
+            
+            result="for this activity you consume: "+activityRetrieved.getCalories()+"kcal";
+        }
+        return result;
         
     }
 
