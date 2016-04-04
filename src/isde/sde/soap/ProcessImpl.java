@@ -136,7 +136,10 @@ public class ProcessImpl implements Process {
         
         Business business=getBusiness();
         temp=business.addHealthMeasure(idUser,healthMeasure);
+        System.out.println("aggiunta misura");
         List<Goal> goalList=business.controlGoalHealth(healthMeasure, idUser);
+        System.out.println("controllo i goal");
+        System.out.println("goalList.size: "+goalList.size);
         
         if(goalList.size()>=0){
             
