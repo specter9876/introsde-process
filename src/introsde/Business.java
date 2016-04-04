@@ -27,36 +27,6 @@ public interface Business {
 
     /**
      * 
-     * @param userIn
-     * @return
-     *     returns introsde.User
-     */
-    @WebMethod
-    @WebResult(name = "user", targetNamespace = "")
-    @RequestWrapper(localName = "updateUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.UpdateUser")
-    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.UpdateUserResponse")
-    @Action(input = "http://soap.sde.isde/Business/updateUserRequest", output = "http://soap.sde.isde/Business/updateUserResponse")
-    public User updateUser(
-        @WebParam(name = "userIn", targetNamespace = "")
-        User userIn);
-
-    /**
-     * 
-     * @param idUser
-     * @return
-     *     returns java.util.List<introsde.Goal>
-     */
-    @WebMethod
-    @WebResult(name = "goals", targetNamespace = "")
-    @RequestWrapper(localName = "toDoGoal", targetNamespace = "http://soap.sde.isde/", className = "introsde.ToDoGoal")
-    @ResponseWrapper(localName = "toDoGoalResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.ToDoGoalResponse")
-    @Action(input = "http://soap.sde.isde/Business/toDoGoalRequest", output = "http://soap.sde.isde/Business/toDoGoalResponse")
-    public List<Goal> toDoGoal(
-        @WebParam(name = "idUser", targetNamespace = "")
-        long idUser);
-
-    /**
-     * 
      * @param password
      * @param userName
      * @return
@@ -90,6 +60,21 @@ public interface Business {
 
     /**
      * 
+     * @param userIn
+     * @return
+     *     returns introsde.User
+     */
+    @WebMethod
+    @WebResult(name = "user", targetNamespace = "")
+    @RequestWrapper(localName = "updateUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.UpdateUserResponse")
+    @Action(input = "http://soap.sde.isde/Business/updateUserRequest", output = "http://soap.sde.isde/Business/updateUserResponse")
+    public User updateUser(
+        @WebParam(name = "userIn", targetNamespace = "")
+        User userIn);
+
+    /**
+     * 
      * @param idUser
      * @return
      *     returns java.util.List<introsde.HealthMeasure>
@@ -100,36 +85,6 @@ public interface Business {
     @ResponseWrapper(localName = "getRecentHealthMeasureByUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetRecentHealthMeasureByUserResponse")
     @Action(input = "http://soap.sde.isde/Business/getRecentHealthMeasureByUserRequest", output = "http://soap.sde.isde/Business/getRecentHealthMeasureByUserResponse")
     public List<HealthMeasure> getRecentHealthMeasureByUser(
-        @WebParam(name = "idUser", targetNamespace = "")
-        Long idUser);
-
-    /**
-     * 
-     * @param idUser
-     * @return
-     *     returns java.util.List<introsde.Goal>
-     */
-    @WebMethod
-    @WebResult(name = "goals", targetNamespace = "")
-    @RequestWrapper(localName = "failGoal", targetNamespace = "http://soap.sde.isde/", className = "introsde.FailGoal")
-    @ResponseWrapper(localName = "failGoalResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.FailGoalResponse")
-    @Action(input = "http://soap.sde.isde/Business/failGoalRequest", output = "http://soap.sde.isde/Business/failGoalResponse")
-    public List<Goal> failGoal(
-        @WebParam(name = "idUser", targetNamespace = "")
-        long idUser);
-
-    /**
-     * 
-     * @param idUser
-     * @return
-     *     returns java.util.List<introsde.HealthMeasure>
-     */
-    @WebMethod
-    @WebResult(name = "healthMeasures", targetNamespace = "")
-    @RequestWrapper(localName = "getHistoryOfAllHealthMeasureByUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUser")
-    @ResponseWrapper(localName = "getHistoryOfAllHealthMeasureByUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUserResponse")
-    @Action(input = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserRequest", output = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserResponse")
-    public List<HealthMeasure> getHistoryOfAllHealthMeasureByUser(
         @WebParam(name = "idUser", targetNamespace = "")
         Long idUser);
 
@@ -150,6 +105,21 @@ public interface Business {
         Long idUser,
         @WebParam(name = "healthMeasureIn", targetNamespace = "")
         HealthMeasure healthMeasureIn);
+
+    /**
+     * 
+     * @param idUser
+     * @return
+     *     returns java.util.List<introsde.HealthMeasure>
+     */
+    @WebMethod
+    @WebResult(name = "healthMeasures", targetNamespace = "")
+    @RequestWrapper(localName = "getHistoryOfAllHealthMeasureByUser", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUser")
+    @ResponseWrapper(localName = "getHistoryOfAllHealthMeasureByUserResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetHistoryOfAllHealthMeasureByUserResponse")
+    @Action(input = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserRequest", output = "http://soap.sde.isde/Business/getHistoryOfAllHealthMeasureByUserResponse")
+    public List<HealthMeasure> getHistoryOfAllHealthMeasureByUser(
+        @WebParam(name = "idUser", targetNamespace = "")
+        Long idUser);
 
     /**
      * 
@@ -228,10 +198,40 @@ public interface Business {
      */
     @WebMethod
     @WebResult(name = "goals", targetNamespace = "")
+    @RequestWrapper(localName = "toDoGoal", targetNamespace = "http://soap.sde.isde/", className = "introsde.ToDoGoal")
+    @ResponseWrapper(localName = "toDoGoalResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.ToDoGoalResponse")
+    @Action(input = "http://soap.sde.isde/Business/toDoGoalRequest", output = "http://soap.sde.isde/Business/toDoGoalResponse")
+    public List<Goal> toDoGoal(
+        @WebParam(name = "idUser", targetNamespace = "")
+        long idUser);
+
+    /**
+     * 
+     * @param idUser
+     * @return
+     *     returns java.util.List<introsde.Goal>
+     */
+    @WebMethod
+    @WebResult(name = "goals", targetNamespace = "")
     @RequestWrapper(localName = "getGoalAchieved", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetGoalAchieved")
     @ResponseWrapper(localName = "getGoalAchievedResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.GetGoalAchievedResponse")
     @Action(input = "http://soap.sde.isde/Business/getGoalAchievedRequest", output = "http://soap.sde.isde/Business/getGoalAchievedResponse")
     public List<Goal> getGoalAchieved(
+        @WebParam(name = "idUser", targetNamespace = "")
+        long idUser);
+
+    /**
+     * 
+     * @param idUser
+     * @return
+     *     returns java.util.List<introsde.Goal>
+     */
+    @WebMethod
+    @WebResult(name = "goals", targetNamespace = "")
+    @RequestWrapper(localName = "failGoal", targetNamespace = "http://soap.sde.isde/", className = "introsde.FailGoal")
+    @ResponseWrapper(localName = "failGoalResponse", targetNamespace = "http://soap.sde.isde/", className = "introsde.FailGoalResponse")
+    @Action(input = "http://soap.sde.isde/Business/failGoalRequest", output = "http://soap.sde.isde/Business/failGoalResponse")
+    public List<Goal> failGoal(
         @WebParam(name = "idUser", targetNamespace = "")
         long idUser);
 
