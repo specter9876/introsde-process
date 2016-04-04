@@ -141,7 +141,7 @@ public class ProcessImpl implements Process {
         System.out.println("controllo i goal");
         System.out.println("goalList.size: "+goalList.size());
         
-        if(goalList.size()>=0){
+        if(goalList.size()>0){
             
             result="well done you get your goal: "+ goalList.get(0).getDescription() + ", and for this measure: "+ temp;
         }
