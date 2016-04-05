@@ -135,11 +135,15 @@ public class ProcessImpl implements Process {
         String temp=null;
         
         Business business=getBusiness();
-        temp=business.addHealthMeasure(idUser,healthMeasure);
-        System.out.println("aggiunta misura");
+        
+        /*temp=business.addHealthMeasure(idUser,healthMeasure);
+        System.out.println("aggiunta misura");*///order inversion try it XD
         List<Goal> goalList=business.controlGoalHealth(healthMeasure, idUser);
         System.out.println("controllo i goal");
         System.out.println("goalList.size: "+goalList.size());
+        
+        temp=business.addHealthMeasure(idUser,healthMeasure);
+        System.out.println("aggiunta misura");
         
         if(goalList.size()>0){
             
