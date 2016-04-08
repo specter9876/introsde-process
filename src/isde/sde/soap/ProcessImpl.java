@@ -145,7 +145,7 @@ public class ProcessImpl implements Process {
         temp=business.addHealthMeasure(idUser,healthMeasure);
         System.out.println("aggiunta misura");
         
-        if(goalList.size()>0){
+        if((goalList.size()>0) && (goalList.get(0).getEndValue()==goalList.get(0).getProgress())){
             
             result="well done you get your goal: "+ goalList.get(0).getDescription() + ", and for this measure: "+ temp;
         }
