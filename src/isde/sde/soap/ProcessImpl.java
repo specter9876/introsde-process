@@ -262,10 +262,11 @@ public class ProcessImpl implements Process {
         Business business=getBusiness();
         
         Activity activityRetrieved=business.addMyActivity(activity,idUser);
+        System.out.println("flag");
         List <Goal> goalList=business.controlGoalActivity(activity,idUser);
         
        
-        if((goalList.size()>=0) && (goalList.get(0).getEndValue()==goalList.get(0).getProgress())){
+        if((goalList.size()>0) && (goalList.get(0).getEndValue()==goalList.get(0).getProgress())){
             
             result="well done you get your goal: "+ goalList.get(0).getDescription() + ", and for this activity you consume: "+activityRetrieved.getCalories()+"kcal";
         }
