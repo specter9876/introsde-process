@@ -166,7 +166,7 @@ public class ProcessImpl implements Process {
     public List<Food> suggestFoodByCaloriesBound(String type, double calories){//OK\\
         
         Business business=getBusiness();
-        return business.suggestFoodByCaloriesBound(type,calories);;
+        return business.suggestFoodByCaloriesBound(type,calories);
     }
     
     
